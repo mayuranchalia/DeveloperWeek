@@ -46,7 +46,7 @@ component  restpath="books" rest="true"
 	*
 	*/
 	remote function addBook(required Struct structData restargsource = "body" ) consumes="application/json" produces="application/json"  
-		httpmethod="POST" description="add a new book" returntype="void" {
+		httpmethod="POST" description="Add a new book" returntype="void" {
 		if(isnull(structData.authorid)){
 	          throw("Bad Request","400","AuthorId should be provided","400");
 	                       	}
@@ -102,7 +102,7 @@ component  restpath="books" rest="true"
 	  remote function updateBook(required numeric bookid restargsource = "path" restargname="bookid",
 	  									string title restargsource ="Form" restargname="title",
 	  									string description restargsource ="Form" restargname="description") returntype="String" httpmethod="PUT" restpath="{bookid}" 
-	   						description=" updates book with given id" consumes="application/x-www-form-urlencoded" {
+	   						description=" Updates book with given id" consumes="application/x-www-form-urlencoded" {
 	  		if(!isnumeric(bookid)){
 			throw("Bad Request","400","Bookid should be numeric","400");
 			}
